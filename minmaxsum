@@ -1,0 +1,20 @@
+function miniMaxSum(arr){
+    let arrSorted = arr.sort()
+    let arrMin = Math.min.apply(null, arrSorted)
+    let arrMax = Math.max.apply(null, arrSorted)
+    let arrSortedMin = arrSorted[0]
+    let arrSortedMax = arrSorted[arrSorted.length - 1]
+    let sum1 = 0
+    let sum2 = 0
+    for(let i = 1; i < arrSorted.length; i++ ){
+        if(arrMin === arrSortedMin){
+            sum1 += arrSorted[i]
+        }
+    }
+    for(let i = arrSorted.length - 2; i >= 0 ; i--){
+        if(arrMin === arrSortedMin){
+            sum2 += arrSorted[i]
+        }  
+    }
+    console.log(sum1, sum2)
+}
